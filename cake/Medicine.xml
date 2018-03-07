@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="MedicineInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="medicine" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name"  type="xs:string"></xs:element>
+							<xs:element name="Description"    type="xs:string"></xs:element>
+							<xs:element name="Dosage" type="xs:string"></xs:element>
+							<xs:element name="Uses" type="xs:string"></xs:element>
+							<xs:element name="Sideeffects" type="xs:string"></xs:element>
+							<xs:element name="Manufacturer" type="xs:string"></xs:element>
+						<xs:sequence>
+							<xs:element name="dno" type="xs:string"></xs:element>
+							<xs:element name="street" type="xs:string"></xs:element>
+							<xs:element name="city" type="xs:string"></xs:element>
+							<xs:element name="district" type="xs:string"></xs:element>
+						</xs:sequence>					
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		</xs:element>
+</xs:schema>
+
+
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE MedicineInfo [
+<!ELEMENT MedicineInfo (medicine+)>
+<!ELEMENT medicine (Name,Description,Dosage,Uses,Sideeffects,Manufacturer,Address)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Dosage (#PCDATA)>
+<!ELEMENT Uses (#PCDATA)>
+<!ELEMENT Sideeffects (#PCDATA)>
+<!ELEMENT Manufacturer (#PCDATA)>
+<!ELEMENT Address (dno,street,city,district)>
+<!ELEMENT dno (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT district (#PCDATA)>
+]>
+
+
+
+<MedicineInfo>
+<medicine>
+	<Name>pain killer</Name>
+	<Description>Its is used for headache</Description>
+	<Dosage>2 times per day</Dosage>
+	<Uses>Brings relax and pain free</Uses>
+	<Sideeffects>No</Sideeffects>
+	<Manufacturer>Divya</Manufacturer>
+	<Address>
+	   <dno>3-139</dno>
+	   <street>Madapur</street>
+	   <City>Vijayawada</City>
+	   <district>krishna</district>
+	</Address>
+</medicine>
+<medicine>
+	<Name>Antibiotic</Name>
+	<Description>Its is used for allergies and severe problems</Description>
+	<Dosage>3 times per day</Dosage>
+	<Uses>Cures from dangerous diseases</Uses>
+	<Sideeffects>Severe heat in the body</Sideeffects>
+	<Manufacturer>Jyothi</Manufacturer>
+	<Address>
+	   <dno>139</dno>
+	   <street>jagayapeta</street>
+	   <City>Bhimavaram</City>
+	   <district>Godavari</district>
+	</Address>
+</medicine>
+</MedicineInfo>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<html> 
+<body>
+  <h2>My MedicineInfo</h2>
+  <table border="1">
+    <tr bgcolor="#9acd32">
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:left">Dosage</th>
+      <th style="text-align:left">Uses</th>
+      <th style="text-align:left">Sideeffects</th>
+      <th style="text-align:left">Manufacturer</th>
+       <th style="text-align:left">Address</th>
+    </tr>
+    <xsl:for-each select="MedicineInfo/medicine">
+    <tr>
+      <td><xsl:value-of select="Name"/></td>
+      <td><xsl:value-of select="Description"/></td>
+      <td><xsl:value-of select="Dosage"/></td>
+      <td><xsl:value-of select="Uses"/></td>
+      <td><xsl:value-of select="Sideeffects"/></td>
+      <td><xsl:value-of select="Manufacturer"/></td>
+       <td><xsl:value-of select="Address"/></td>
+    </tr>
+    </xsl:for-each>
+  </table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+
+	   
+
+

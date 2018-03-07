@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+  <form>
+  <label for="vfname">First Name:</label>  
+  <input label="" id="vfname" type="text" ><br><br>
+  
+  <label for="vlname">Last Name:</label>
+  <input id="vlname"  type="text" ><br><br>
+  
+  <label for="user">User Name:</label>
+  <input id="user" type="text" ><br><br>
+  
+  <label for="pass">Pass Word:</label>
+  <input id="pass" type="password" ><hr>
+  
+  <label for="Gender">Gender:</label><br>
+  <label for="male">Male:</label>
+  <input type="radio" name="gender" id="male" required>
+  <label for="female">Female:</label>
+  <input type="radio" name="gender" id="female" value="female"><br><br>
+  
+  <label for="regd">Regd Number:</label>
+  <input id="regd" type="text"><br><br>
+  
+  <label for="dob">Date of Birth:</label>
+  <input id="dob" type="date"><br><hr>
+  
+  <label for="tarea">Address:</label><br>
+  <textarea id="tarea" rows="5" cols="40"> </textarea><br><br>
+  
+  <label for="pno">Phone Number:</label>
+  <input id="pno" type="text" ><br><br>
+  
+  <label for="zip">Zip Code:</label>
+  <input id="zip" type="text"><br><br>
+  
+  <label for="marks">Average Marks:</label>
+  <input id="marks" type="text"><br><br>
+  
+  <label for="email">Email:</label>
+  <input id="email" type="email"><hr>
+  
+  <input type="submit" value="Submit" onclick="Validation()" >
+  </form>
+  
+  
+  <script>
+  function Validation(){
+      var val = document.getElementById('vfname').value;//validate first name
+       if (val == "") {
+         alert("Name must be filled out")
+       }
+      else{
+         if(!val.match(/^[a-zA-Z]+$/)){   
+          alert('only alphabets are allowed')
+         }
+       }
+       
+       var val1 = document.getElementById('vlname').value; //validate last name
+         if (!val1 == "") {
+         if(!val1.match(/^[a-zA-Z]+$/)){
+           alert('only alphabets are allowed')
+         }
+       }
+       
+       var text = document.getElementById('user').value;//validate user name
+        if(text.length >= 10 && text.length<=5 ){
+        alert("Enter username between 5-10 characters long")
+        }
+        text = text.split(' '); 
+        if(!text.length == 1){
+          alert('invalid user name')
+        }  
+        
+        
+      var input = document.getElementById('pass').value;//validate password
+       if (input == "") {
+          alert("Pass word must be filled out")
+       }
+       else{
+          if(!input.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,15}$/)){   
+            alert('The password must contain at least one uppercase letter, one lowercase letter, and one number and one special character. The length of the password must be greater than 6 characters')  
+          }
+          else{   
+             alert('Wrong password!')  
+          }
+       }
+      
+      var address=document.getElementById("tarea").value;//validate address
+      if(address ==""){
+         alert("address must be entered")
+      }
+      
+      var num=document.getElementById("pno").value;//validate phone number
+      if (num == "") {
+        alert("Phone Number must be filled out")
+      }
+      else{
+        if(!num.match(/^\d{10}$/)){
+           alert('invalid phone number')
+        }
+      }
+      var pin=document.getElementById("zip").value;//validate zip code
+      if (pin == "") {
+        alert("Zip code must be filled out")
+      }
+      else{
+        if(!pin.match(/^\d{6}$/)){
+           alert('invalid Zip code')
+        }
+      }
+      var avg=document.getElementById("marks").value;
+      if(avg == ""){                        //validate average marks
+        alert("enter marks")
+      }
+      else{
+        if(avg <=0 && avg>=100 ){
+          alert("enter marks correctly")
+        } 
+      }
+    
+  } 
+  </script>
+  </body>
+</html>

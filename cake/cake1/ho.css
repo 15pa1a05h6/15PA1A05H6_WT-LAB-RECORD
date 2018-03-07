@@ -1,0 +1,76 @@
+.a{
+text-align: center;
+ color: white;
+ background-color:#CD5C5C;
+ padding:10px 0px 15px 0px;
+}
+.a a{
+	color: white;
+}
+body{
+  background-image:url("stardust.png");
+}
+section{
+  background-image:url("crossword.png");
+  padding-left:3%;
+  padding-right:3%;
+  margin-left:10%;
+  margin-right:10%;
+  padding-bottom:5%;
+}
+section h2{
+  color:rgba(96, 159, 159, 1);
+  padding-top:3%;
+}
+
+.f{
+
+	font-family: sans-serif;
+    font-weight: bolder;
+	text-transform: uppercase;
+	text-align: left;
+	color:white;
+	background-color: grey;
+	padding-bottom:1px;
+	padding-left: 20px;
+	padding-top: 1px;
+
+}
+.i{
+	border-top: :1px solid grey;
+
+}
+.b{
+
+	background-color: white;
+	text-align: center;
+	margin:30px 350px 10px 350px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+
+}
+.sub{
+	margin:30px 10px 10px 10px;
+}
+.c{
+	
+	text-align: center;
+	color:grey;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+d{
+  background-color:gray;
+  width:20px;
+  border:solid 10px;
+  
+}
+.w{
+  color:white;
+  font-style:italic;
+}
+section img{
+  border-left:0em;
+  width:100%;
+}
